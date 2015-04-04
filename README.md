@@ -62,6 +62,10 @@ Instantiates a reactive number. Floats allowed. NaNs not allowed. Defaults to 0 
 
 Returns the value of the number reactively.
 
+#### .set()
+
+Sets the value of the number and triggers reactivity. The following methods set the value as well.
+
 #### .add(Number)
 
 #### .subtract(Number)
@@ -72,4 +76,4 @@ Returns the value of the number reactively.
 
 #### .calculate(Function)
 
-Pass in a function with the parameter as the current value of the ReactiveNumber.
+Need something more elaborate? To create a custom calculation, pass in a function with the parameter as the current value of the ReactiveNumber.
