@@ -1,6 +1,6 @@
 Package.describe({
   name: 'lai:reactive-number',
-  version: '1.0.1',
+  version: '1.0.2',
   // Brief, one-line summary of the package.
   summary: 'Manipulate and fetch a number reactively.',
   // URL to the Git repository containing the source code for this package.
@@ -14,7 +14,6 @@ Package.onUse(function(api) {
   api.versionsFrom('1.0');
   api.use([
     'underscore',
-    'check',
     'tracker'
   ]);
   api.addFiles('reactive-number.js');
