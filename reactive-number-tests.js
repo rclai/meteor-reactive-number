@@ -67,3 +67,12 @@ Tinytest.add('calculate() - calculate the square root of 144.', function (test) 
   });
   test.equal(number.get(), 12);
 });
+
+Tinytest.add('calculate() - accepts functions only.', function (test) {
+  var number = createReactiveNumber(144);
+  test.throws(number.calculate.bind(null, 'aewfawef'), 'must pass a function');
+  test.throws(number.calculate.bind(null, 213), 'must pass a function');
+  test.throws(number.calculate.bind(null, 123.12), 'must pass a function');
+  test.throws(number.calculate.bind(null, {}), 'must pass a function');
+  test.throws(number.calculate.bind(null, NaN), 'must pass a function');
+});
