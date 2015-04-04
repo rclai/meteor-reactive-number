@@ -14,6 +14,7 @@ Package.onUse(function(api) {
   api.versionsFrom('1.0');
   api.use([
     'underscore',
+    'check',
     'tracker'
   ]);
   api.addFiles('reactive-number.js');
