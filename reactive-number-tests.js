@@ -76,3 +76,39 @@ Tinytest.add('calculate() - accepts functions only.', function (test) {
   test.throws(number.calculate.bind(null, {}), 'must pass a function');
   test.throws(number.calculate.bind(null, NaN), 'must pass a function');
 });
+
+Tinytest.add('chaining - do a sequence of calculations in a chained manner and also try the Math functions', function (test) {
+  var number = createReactiveNumber(1);
+  number
+    .add(1)
+    .subtract(1)
+    .multiply(50)
+    .divide(2)
+    .calculate(function (number) {
+      return Math.sqrt(number);
+    })
+    // You don't need to supply an argument to the single-argument
+    // Math functions, it simply calculates it using the current value
+    // of the reactive number
+    .sqrt()
+    .ceil()
+    // Math.pow() takes two parameters normally but in this case
+    // you only supply the second argument as the first argument,
+    // the power
+    .pow(3)
+    // Math.max (and min) take as many arguments, but what it will do
+    // is compare this list of numbers to the current value of the
+    // reactive number and set that number as the new value, 
+    // in this case 29
+    .max(4, 29, 5);
+  test.equal(number.get(), 29);
+});
+
+Tinytest.add('chaining - do a chain and then get the value as the last chained call', function (test) {
+  var number = createReactiveNumber(144);
+  test.equal(number
+    .subtract(44)
+    .add(100)
+    .divide(2)
+    .get(), 100);
+});
