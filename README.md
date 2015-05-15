@@ -89,7 +89,7 @@ number
 
 #### new ReactiveNumber(Number);
 
-Instantiates a reactive number. Floats allowed. NaNs not allowed. Defaults to 0 if nothing is passed.
+Instantiates a reactive number. Floats allowed. NaNs not allowed. An initial argument is required.
 
 #### .get()
 
