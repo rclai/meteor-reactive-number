@@ -1,6 +1,6 @@
 Package.describe({
   name: 'lai:reactive-number',
-  version: '2.0.0',
+  version: '2.0.0_1',
   // Brief, one-line summary of the package.
   summary: 'Manipulate and fetch a number reactively.',
   // URL to the Git repository containing the source code for this package.
