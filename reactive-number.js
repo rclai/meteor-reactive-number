@@ -8,7 +8,7 @@ ReactiveNumber = function (number) {
 };
 
 ReactiveNumber.prototype._isNumberAllowed = function (number) {
-  if (!_.isNumber(number)) {
+  if (! _.isNumber(number)) {
     throw new Meteor.Error('wrong-value', number + ' is not a valid number for ReactiveNumber. Only integers and floats allowed.');
   }
   if (_.isNaN(number)) {
@@ -53,7 +53,7 @@ ReactiveNumber.prototype.divide = function (number) {
 };
 
 ReactiveNumber.prototype.calculate = function (fn) {
-  if (!_.isFunction(fn)) {
+  if (! _.isFunction(fn)) {
     throw new Meteor.Error('wrong-argument', 'You must pass a function to the `calculate` method of the ReactiveNumber instance.');
   }
   this.set(fn(this._number));
