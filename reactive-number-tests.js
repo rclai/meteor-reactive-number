@@ -2,6 +2,10 @@ var createReactiveNumber = function (value) {
   return new ReactiveNumber(value);
 };
 
+Tinytest.add('instantiation - without new.', function (test) {
+  test.instanceOf(ReactiveNumber(1), ReactiveNumber);
+});
+
 Tinytest.add('instantiation - can instantiate with only Number values which include integers, floats, but not NaNs.', function (test) {
   test.instanceOf(createReactiveNumber(1), ReactiveNumber);
   test.instanceOf(createReactiveNumber(1.1), ReactiveNumber);

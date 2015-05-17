@@ -1,4 +1,7 @@
 ReactiveNumber = function (number) {
+  if (! (this instanceof ReactiveNumber)) {
+    return new ReactiveNumber(number);
+  }
   this._isNumberAllowed(number);
   this._number = number;
   this._dep = new Tracker.Dependency();
